@@ -34,4 +34,7 @@ public class Media {
 		this.title = title;
 		this.category = category;
 	}
+	public void display() {
+		System.out.println(getTitle() + " - " + getCategory() + " - " + getCost());
+	}
 }

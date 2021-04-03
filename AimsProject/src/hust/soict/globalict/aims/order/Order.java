@@ -23,7 +23,7 @@ public class Order {
             nbOrders++;
         }
     }
-    public Order(){
+	public Order(){
 
     }
     public void addMedia(Media x) {
@@ -34,12 +34,20 @@ public class Order {
     		itemsOrdered.remove(x);
     	}
     }
-    
+    public void removeMedia(int id) {
+    	itemsOrdered.remove(id);
+    }
    public float totalCost() {
 	   float sum = 0;
 	   for(Media x : itemsOrdered) {
 		   sum += x.getCost();
 	   }
 	   return sum;
+   }
+   
+   public void Display() {
+	   for(Media x : itemsOrdered) {
+		   x.display();
+	   }
    }
 }

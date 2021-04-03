@@ -30,5 +30,7 @@ public class DigitalVideoDisc extends Media{
     public void setLength(int length) {
         this.length = length;
     }
-
+    public void display() {
+    	System.out.println(getTitle() + " - " + getCategory() + " - " + getDirector()+ " - " + getLength()+ " - " + getCost());
+    }
 }

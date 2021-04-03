@@ -37,4 +37,7 @@ public class Book extends Media{
 			this.author.remove(authorName);
 		}
 	}
+	public void display() {
+		System.out.println(getTitle() + " - " + getCategory() + " - " + getAuthor()+ " - " + getCost());
+	}
 }
