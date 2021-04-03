@@ -1,7 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:refactor" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:topic" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:topic" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:aimsproject" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:refactor" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c11245e-6eba-4bed-afdc-85410a38a8d1" name="Default Changelist" comment="" />
+    <list default="true" id="9c11245e-6eba-4bed-afdc-85410a38a8d1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/hust/soict/globalict/aims/Aims.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/hust/soict/globalict/aims/Aims.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/hust/soict/globalict/aims/DiscTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/hust/soict/globalict/aims/DiscTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/hust/soict/globalict/aims/disc/DigitalVideoDisc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/hust/soict/globalict/aims/order/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/hust/soict/globalict/aims/order/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/hust/soict/globalict/test/disc/TestPassingParameter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/hust/soict/globalict/test/disc/TestPassingParameter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/globalict/aims/Aims.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/globalict/aims/Aims.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/globalict/aims/DiscTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/globalict/aims/DiscTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/globalict/aims/disc/DigitalVideoDisc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/globalict/aims/media/DigitalVideoDisc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/globalict/aims/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/globalict/aims/order/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/globalict/test/disc/TestPassingParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/globalict/test/disc/TestPassingParameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OtherProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OtherProject/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,14 +68,19 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1pVIXU6yppabc633bHefT9WwJyO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OtherProject" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Application.DiscTest">
     <configuration name="Aims" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -68,15 +127,27 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="223" y="39" width="1089" height="785" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1616834031108">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="39" width="1089" height="785" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1616834031108" />
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1616468950294">
+    <state x="308" y="90" key="#com.intellij.ide.util.MemberChooser" timestamp="1617440232814">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1616468950294" />
+    <state x="308" y="90" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1617440232814" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1616835991197">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

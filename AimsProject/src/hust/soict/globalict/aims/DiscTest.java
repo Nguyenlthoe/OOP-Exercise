@@ -1,6 +1,6 @@
 package hust.soict.globalict.aims;
 
-import hust.soict.globalict.aims.disc.DigitalVideoDisc;
+import hust.soict.globalict.aims.media.DigitalVideoDisc;
 import hust.soict.globalict.aims.order.Order;
 
 public class DiscTest {
@@ -20,18 +20,16 @@ public class DiscTest {
         DigitalVideoDisc dvd10 = new DigitalVideoDisc("Doraemon and Nobita");
         dvd10.setCost(24.3f);
         Order anOrder = new Order();
-        anOrder.addDigitalVideoDisc(dvd4);
-        anOrder.addDigitalVideoDisc(dvd5);
-        anOrder.addDigitalVideoDisc(dvd6);
-        anOrder.addDigitalVideoDisc(dvd7);
-        anOrder.addDigitalVideoDisc(dvd8);
-        anOrder.addDigitalVideoDisc(dvd9);
-        anOrder.addDigitalVideoDisc(dvd10);
-        System.out.println("Total cost is: " + anOrder.totalCost());
-        DigitalVideoDisc luckydisc = anOrder.getALuckyItem();
-        System.out.println(luckydisc.getTitle());
-        System.out.println("Total cost is: " + anOrder.totalCost());
-        System.out.println(dvd7.search("Endgame"));
-        System.out.println(dvd7.search("Nguyen"));
+//        anOrder.addDigitalVideoDisc(dvd4);
+//        anOrder.addDigitalVideoDisc(dvd5);
+//        anOrder.addDigitalVideoDisc(dvd6);
+//        anOrder.addDigitalVideoDisc(dvd7);
+//        anOrder.addDigitalVideoDisc(dvd8);
+//        anOrder.addDigitalVideoDisc(dvd9);
+//        anOrder.addDigitalVideoDisc(dvd10);
+//        System.out.println("Total cost is: " + anOrder.totalCost());
+//        DigitalVideoDisc luckydisc = anOrder.getALuckyItem();
+//        System.out.println(luckydisc.getTitle());
+//        System.out.println("Total cost is: " + anOrder.totalCost());
     }
 }
