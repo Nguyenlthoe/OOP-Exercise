@@ -11,11 +11,13 @@ import hust.soict.globalict.aims.media.DigitalVideoDisc;
 
 public class Aims {
 	public static void main(String[] args) {
+		MemoryDeamon deamon = new MemoryDeamon();
 		Scanner keybroad = new Scanner(System.in);
 		int a = 0;
 		int choose;
 		Order anOrder = null;
 		while(a == 0) {
+			deamon.run();
 			showMenu();
 			choose = keybroad.nextInt();
 			keybroad.nextLine();
@@ -138,6 +140,7 @@ public class Aims {
 					break;
 				case 0:
 					a = 1;
+					deamon.run();
 					break;
 			}
 		}
