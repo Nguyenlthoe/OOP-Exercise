@@ -17,8 +17,13 @@ public class Book extends Media{
 	public Book(String title, String category) {
 		super(title,category);
 	}
-	public List<String> getAuthor() {
-		return author;
+	public Book(String title, String category,float cost) {
+		super(title,category,cost);
+	}
+	public void getAuthor() {
+		for(String x : author) {
+			System.out.print(x + "/");
+		}
 	}
 	public void setAuthor(List<String> author) {
 		this.author = author;
@@ -38,6 +43,8 @@ public class Book extends Media{
 		}
 	}
 	public void display() {
-		System.out.println(getTitle() + " - " + getCategory() + " - " + getAuthor()+ " - " + getCost());
+		System.out.print(getTitle() + " - " + getCategory() + " - ");
+		getAuthor();
+		System.out.println(" : " + getCost());
 	}
 }

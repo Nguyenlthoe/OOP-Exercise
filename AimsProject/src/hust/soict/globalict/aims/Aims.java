@@ -11,110 +11,136 @@ import hust.soict.globalict.aims.media.DigitalVideoDisc;
 
 public class Aims {
 	public static void main(String[] args) {
-//		Scanner keybroad = new Scanner(System.in);
-//		int a = 0;
-//		int choose;
-//		Order anOrder = null;
-//		while(a == 0) {
-//			showMenu();
-//			choose = keybroad.nextInt();
-//			keybroad.nextLine();
-//			switch(choose) {
-//				case 1:
-//					anOrder = new Order();
-//					System.out.println("New order was created!");
-//					break;
-//				case 2:
-//					int k;
-//					System.out.println("DigitalVideoDisc or Book: \n1.DigitalVideoDisc \n2.Book\n3.Media\nPlease choose a number: 1-2-3 ");
-//					k = keybroad.nextInt();
-//					keybroad.nextLine();
-//					if(k==1) {
-//						DigitalVideoDisc media = new DigitalVideoDisc();
-//						System.out.println("Enter title:");
-//						media.setTitle(keybroad.nextLine());
-//						System.out.println("Enter category:");
-//						media.setCategory(keybroad.nextLine());
-//						System.out.println("Enter cost:");
-//						media.setCost(keybroad.nextFloat());
-//						keybroad.nextLine();
-//						System.out.println("Enter length:");
-//						media.setLength(keybroad.nextInt());
-//						keybroad.nextLine();
-//						System.out.println("Enter directory:");
-//						media.setDirector(keybroad.nextLine());
-//						anOrder.addMedia(media);
-//					} else if(k==2) {
-//						Book media = new Book();
-//						System.out.println("Enter title:");
-//						media.setTitle(keybroad.nextLine());
-//						System.out.println("Enter category:");
-//						media.setCategory(keybroad.nextLine());
-//						System.out.println("Enter cost:");
-//						media.setCost(keybroad.nextFloat());
-//						keybroad.nextLine();
-//						System.out.println("Enter author: ");
-//						media.addAuthor(keybroad.nextLine());
-//						anOrder.addMedia(media);
-//					} else {
-//						Media media = new Media();
-//						System.out.println("Enter title:");
-//						media.setTitle(keybroad.nextLine());
-//						System.out.println("Enter category:");
-//						media.setCategory(keybroad.nextLine());
-//						System.out.println("Enter cost:");
-//						keybroad.nextLine();
-//						anOrder.addMedia(media);
-//					}
-//					break;
-//				case 3:
-//					int id;
-//					System.out.println("Enter item for delete by id: ");
-//					id = keybroad.nextInt();
-//					keybroad.nextLine();
-//					anOrder.removeMedia(id);
-//					break;
-//				case 4:
-//					System.out.println("Your order: ");
-//					anOrder.Display();
-//					break;
-//				case 0:
-//					a = 1;
-//					break;
-//			}
-//		}
-//		MyDate firstday = new MyDate(11,7,2020);
-//		Order anOrder = new Order(firstday);
-//		DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King");
-//		dvd1.setCategory("Animation");
-//		dvd1.setCost(19.95f);
-//		dvd1.setDirector("Roger Allers");
-//		dvd1.setLength(87);
-//
-//		DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars");
-//		dvd2.setCategory("Science Fiction");
-//		dvd2.setCost(24.95f);
-//		dvd2.setDirector("George lucas");
-//		dvd2.setLength(124);
-//
-//		DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladdin");
-//		dvd3.setCategory("Animation");
-//		dvd3.setCost(18.99f);
-//		dvd3.setDirector("John Musker");
-//		dvd3.setLength(90);
-//		
-//		Book book1 = new Book("Harry Potter");
-//		book1.addAuthor("J.K.Rowling");
-//		book1.setCost(27.3f);
-//		anOrder.addMedia(dvd2);
-//		anOrder.addMedia(dvd3);
-//		anOrder.addMedia(dvd1);
-//		anOrder.addMedia(book1);
-//		anOrder.addMedia(dvd2);
-//		
-//		System.out.println("Total cost is: " + anOrder.totalCost());
-//		anOrder.removeMedia(dvd2);
-//		System.out.println("Total cost is: " + anOrder.totalCost());
+		Scanner keybroad = new Scanner(System.in);
+		int a = 0;
+		int choose;
+		Order anOrder = null;
+		while(a == 0) {
+			showMenu();
+			choose = keybroad.nextInt();
+			keybroad.nextLine();
+			switch(choose) {
+				case 1:
+					anOrder = new Order();
+					System.out.println("New order was created!");
+					break;
+				case 2:
+					int k;
+					System.out.println("Choose your option: \n1.DigitalVideoDisc \n2.Book\n3.CompactDisc\nPlease choose a number: 1-2-3 ");
+					k = keybroad.nextInt();
+					keybroad.nextLine();
+					if(k==1) {
+						String title;
+						String category;
+						String director;
+						int lenght;
+						float cost;
+						System.out.println("Enter the title: ");
+						title = keybroad.nextLine();
+						System.out.println("Enter the category: ");
+						category = keybroad.nextLine();
+						System.out.println("Enter the director: ");
+						director = keybroad.nextLine();
+						System.out.println("Enter the length: ");
+						lenght = keybroad.nextInt();
+						System.out.println("Enter the cost: ");
+						cost = keybroad.nextFloat();
+						keybroad.nextLine();
+						DigitalVideoDisc dvd = new DigitalVideoDisc(title,category,director,lenght,cost);
+						anOrder.addMedia(dvd);
+						System.out.println("Do you like play this DigitalVideoDisc ?\n 1. Yes!\n 2. No, thanks!\nChoose your option: ");
+						int m = keybroad.nextInt();
+						keybroad.nextLine();
+						if(m == 1) {
+							dvd.play();
+						}
+					} else if(k==2) {
+						String title;
+						String category;
+						float cost;
+						String author;
+						System.out.println("Enter the title: ");
+						title = keybroad.nextLine();
+						System.out.println("Enter the category: ");
+						category = keybroad.nextLine();
+						System.out.println("Enter the cost: ");
+						cost = keybroad.nextFloat();
+						keybroad.nextLine();
+						Book book = new Book(title,category,cost);
+						int b = 1;
+						while(b == 1) {
+							System.out.println("Add more author: \n1. Ok!\n2.No,thanks!\nEnter your option:");
+							int c = keybroad.nextInt();
+							keybroad.nextLine();
+							if(c == 1) {
+								System.out.println("Enter the author: ");
+								author = keybroad.nextLine();
+								book.addAuthor(author);
+							} else {
+								b = 0;
+							}
+						}
+						anOrder.addMedia(book);
+					} else {
+						String title;
+						String category;
+						String artist;
+						String director;
+						float cost;
+						System.out.println("Enter the title: ");
+						title = keybroad.nextLine();
+						System.out.println("Enter the category: ");
+						category = keybroad.nextLine();
+						System.out.println("Enter the cost: ");
+						cost = keybroad.nextFloat();
+						keybroad.nextLine();
+						System.out.println("Enter the director: ");
+						director = keybroad.nextLine();
+						System.out.println("Enter the artist: ");
+						artist = keybroad.nextLine();
+						CompactDisc cpdvd = new CompactDisc(title,category,director,cost,artist);
+						int b = 1;
+						while(b == 1) {
+							System.out.println("Add more track: \n1. Ok!\n2.No,thanks!\nEnter your option:");
+							int c = keybroad.nextInt();
+							keybroad.nextLine();
+							if(c == 1) {
+								System.out.println("Enter the title of track: ");
+								String titleoftrack = keybroad.nextLine();
+								System.out.println("Enter the lenght: ");
+								int lenght = keybroad.nextInt();
+								keybroad.nextLine();
+								Track track = new Track(titleoftrack,lenght);
+								cpdvd.addTrack(track);
+							} else {
+								b = 0;
+							}
+						}
+						anOrder.addMedia(cpdvd);
+						System.out.println("Do you like play this CompactDisc ?\n 1. Yes!\n 2. No, thanks!\nChoose your option: ");
+						int m = keybroad.nextInt();
+						keybroad.nextLine();
+						if(m == 1) {
+							cpdvd.play();
+						}
+					}
+					break;
+				case 3:
+					int id;
+					System.out.println("Enter item for delete by id: ");
+					id = keybroad.nextInt();
+					keybroad.nextLine();
+					anOrder.removeMedia(id);
+					break;
+				case 4:
+					System.out.println("Your order: ");
+					anOrder.Display();
+					break;
+				case 0:
+					a = 1;
+					break;
+			}
+		}
 	}
 	public static void showMenu() {
 		System.out.println("Order Management Application: ");

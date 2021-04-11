@@ -1,12 +1,8 @@
 package hust.soict.globalict.aims.media;
 public class DigitalVideoDisc extends Disc implements Playable{
-
-    private String director;
-    private int length;
-    public DigitalVideoDisc() {
-        super();
+    public DigitalVideoDisc(String title, String category,String director,int lenght,float cost) {
+    	super(title,category,director,lenght,cost);
     }
-
     public DigitalVideoDisc(String title) {
         super(title);
     }
@@ -15,23 +11,9 @@ public class DigitalVideoDisc extends Disc implements Playable{
         super(title,category);
     }
 
-    public String getDirector() {
-        return director;
-    }
-
-    public void setDirector(String director) {
-        this.director = director;
-    }
-
-    public int getLength() {
-        return length;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
-    }
+    
     public void display() {
-    	System.out.println(getTitle() + " - " + getCategory() + " - " + getDirector()+ " - " + getLength()+ " - " + getCost());
+    	System.out.println(getTitle() + " - " + getCategory() + " - " + getDirector()+ " - " + getLength()+ " : " + getCost());
     }
     public void play() {
     	System.out.println("Playing DVD: " + this.getTitle());
