@@ -24,12 +24,12 @@ public class TestPassingParameter {
 
     public static void swap(DigitalVideoDisc o1,DigitalVideoDisc o2){
         DigitalVideoDisc tmp = new DigitalVideoDisc(o1.getTitle());
-        o1.setTitle(o2.getTitle());
-        o2.setTitle(tmp.getTitle());
+//        o1.setTitle(o2.getTitle());
+//        o2.setTitle(tmp.getTitle());
     }
     public static void changeTitle(DigitalVideoDisc dvd,String title){
         String oldTitle = dvd.getTitle();
-        dvd.setTitle(title);
-        dvd = new DigitalVideoDisc(oldTitle);
+//        dvd.setTitle(title);
+//        dvd = new DigitalVideoDisc(oldTitle);
     }
 }

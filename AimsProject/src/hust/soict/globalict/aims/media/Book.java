@@ -1,6 +1,6 @@
 package hust.soict.globalict.aims.media;
 
-import java.awt.image.TileObserver;
+
 import java.util.ArrayList;
 import java.util.List;
 
