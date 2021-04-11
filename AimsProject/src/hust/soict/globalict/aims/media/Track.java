@@ -1,6 +1,6 @@
 package hust.soict.globalict.aims.media;
 
-public class Track {
+public class Track implements Playable{
 
 
 	private String title;
@@ -21,4 +21,8 @@ public class Track {
 		this.title = title;
 		this.length = length;
 	}
+	public void play() {
+		System.out.println("Playing Track: " + this.getTitle());
+		System.out.println("Track length: " + this.getLength());
+		}
 }
