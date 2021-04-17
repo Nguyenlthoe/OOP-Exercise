@@ -43,7 +43,7 @@ public class Book extends Media{
 		}
 	}
 	public void display() {
-		System.out.print(getTitle() + " - " + getCategory() + " - ");
+		System.out.print("Book: "+getTitle() + " - " + getCategory() + " - ");
 		getAuthor();
 		System.out.println(" : " + getCost());
 	}

@@ -11,7 +11,11 @@ public class Order {
     public static final int MAX_NUMBERS_ORDERED = 10;
     public static final int MAX_LIMITED_ORDERS = 5;
     private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
-    private static int nbOrders = 0;
+    public ArrayList<Media> getItemsOrdered() {
+		return itemsOrdered;
+	}
+
+	private static int nbOrders = 0;
     private MyDate dateOrderd;
 
     public Order(MyDate dateOrderd) {

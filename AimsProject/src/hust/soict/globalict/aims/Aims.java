@@ -3,6 +3,7 @@ package hust.soict.globalict.aims;
 import hust.soict.globalict.aims.utils.*;
 import hust.soict.globalict.aims.order.*;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import hust.soict.globalict.aims.media.*;
@@ -143,7 +144,10 @@ public class Aims {
 					deamon.run();
 					break;
 			}
+			
 		}
+		System.out.println(anOrder.getItemsOrdered().get(0).getId());
+		System.out.println(anOrder.getItemsOrdered().get(1).getId());
 	}
 	public static void showMenu() {
 		System.out.println("Order Management Application: ");

@@ -50,4 +50,5 @@ public class CompactDisc extends Disc implements Playable{
 	public void display() {
 		System.out.println("CompactDisc: " + getTitle() +  " - " + getCategory() + " - " + getDirector() + " - " + getArtist() + " - " + getLength()  + " : " + getCost());
 	}
+	
 }
