@@ -139,6 +139,9 @@ public class Aims {
 					System.out.println("Your order: ");
 					anOrder.Display();
 					break;
+				case 5:
+					anOrder.sortMedia();
+					break;
 				case 0:
 					a = 1;
 					deamon.run();
@@ -156,6 +159,7 @@ public class Aims {
 		System.out.println("2. Add item to the order");
 		System.out.println("3. Delete item by id");
 		System.out.println("4. Display the items list of order");
+		System.out.println("5. Sort item");
 		System.out.println("0. Exit");
 		System.out.println("--------------------------------");
 		System.out.println("Please choose a number: 0-1-2-3-4");

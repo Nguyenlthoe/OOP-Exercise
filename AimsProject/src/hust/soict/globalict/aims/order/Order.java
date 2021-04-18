@@ -2,16 +2,20 @@ package hust.soict.globalict.aims.order;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 import hust.soict.globalict.aims.media.DigitalVideoDisc;
 import hust.soict.globalict.aims.media.Media;
+import hust.soict.globalict.aims.media.Track;
 import hust.soict.globalict.aims.utils.MyDate;
 
 public class Order {
     public static final int MAX_NUMBERS_ORDERED = 10;
     public static final int MAX_LIMITED_ORDERS = 5;
-    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
-    public ArrayList<Media> getItemsOrdered() {
+    private List<Media> itemsOrdered = new ArrayList<Media>();
+    public List<Media> getItemsOrdered() {
 		return itemsOrdered;
 	}
 
@@ -53,5 +57,13 @@ public class Order {
 	   for(Media x : itemsOrdered) {
 		   x.display();
 	   }
+   }
+   public void sortMedia() {
+	   Collections.sort(itemsOrdered, new Comparator<Media>() {
+		   public int compare(Media a,Media b) {
+			   return a.getTitle().compareTo(b.getTitle());
+		   }
+
+	});
    }
 }

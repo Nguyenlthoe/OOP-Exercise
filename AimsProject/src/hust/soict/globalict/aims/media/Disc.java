@@ -36,5 +36,4 @@ public class Disc extends Media {
 		super(title,category,cost);
 		this.director = director;
 	}
-	
 }

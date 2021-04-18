@@ -22,4 +22,7 @@ public class DigitalVideoDisc extends Disc implements Playable{
     	System.out.println("Playing DVD: " + this.getTitle());
     	System.out.println("DVD length: " + this.getLength());
     }
+	public int compareTo(Media a) {
+		return (int)(this.getCost() - a.getCost());
+	}
 }
