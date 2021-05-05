@@ -51,6 +51,10 @@ public class CompactDisc extends Disc implements Playable{
 	public void display() {
 		System.out.println("CompactDisc: " + getTitle() +  " - " + getCategory() + " - " + getDirector() + " - " + getArtist() + " - " + getLength()  + " : " + getCost());
 	}
+	public String strdisplay(){
+		String a = "CompactDisc: " + getTitle() +  " - " + getCategory() + " - " + getDirector() + " - " + getArtist() + " - " + getLength()  + " : " + getCost();
+		return a;
+	}
 	public int compareTo(Media a) {
 		if(this.tracks.size() == ((CompactDisc) a).tracks.size()) {
 			return this.getLength() - ((CompactDisc) a).getLength();

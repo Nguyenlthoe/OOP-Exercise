@@ -54,4 +54,8 @@ public abstract class  Media implements Comparable<Media>{
 	public int compareTo(Media a) {
 		return this.title.compareTo(a.getTitle());
 	}
+	public String strdisplay(){
+		String a = getTitle() + " - " + getCategory() + " - " + getCost();
+		return a;
+	}
 }

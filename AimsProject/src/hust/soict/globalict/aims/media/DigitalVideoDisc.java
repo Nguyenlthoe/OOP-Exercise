@@ -15,6 +15,10 @@ public class DigitalVideoDisc extends Disc implements Playable{
     public void display() {
     	System.out.println("DigitalVideoDisc: "+getTitle() + " - " + getCategory() + " - " + getDirector()+ " - " + getLength()+ " : " + getCost());
     }
+    public  String strdisplay(){
+        String a = "DigitalVideoDisc: "+getTitle() + " - " + getCategory() + " - " + getDirector()+ " - " + getLength()+ " : " + getCost();
+        return a;
+    }
     public DigitalVideoDisc(String title, String category, float cost) {
 		super(title, category, cost);
 	}

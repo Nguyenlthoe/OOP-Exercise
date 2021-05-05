@@ -42,10 +42,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c11245e-6eba-4bed-afdc-85410a38a8d1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/hust/soict/globalict/aims/Aims.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/hust/soict/globalict/aims/Aims.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/hust/soict/globalict/aims/DiscTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/hust/soict/globalict/aims/DiscTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/hust/soict/globalict/aims/order/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/hust/soict/globalict/aims/order/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/hust/soict/globalict/test/disc/TestPassingParameter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/hust/soict/globalict/test/disc/TestPassingParameter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/globalict/aims/Aims.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/globalict/aims/Aims.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/globalict/aims/media/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/globalict/aims/media/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/globalict/aims/media/CompactDisc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/globalict/aims/media/CompactDisc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/globalict/aims/media/DigitalVideoDisc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/globalict/aims/media/DigitalVideoDisc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/globalict/aims/media/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/globalict/aims/media/Media.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/globalict/aims/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/globalict/aims/order/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/soict/globalict/test/media/TestMediaCompareTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/soict/globalict/test/media/TestMediaCompareTo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,9 +78,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/oop_eclipse/Testswing" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
-  <component name="RunManager" selected="Application.DiscTest">
+  <component name="RunManager" selected="Application.Aims">
     <configuration name="Aims" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hust.soict.globalict.aims.Aims" />
       <module name="AimsProject" />
@@ -102,8 +110,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DiscTest" />
         <item itemvalue="Application.Aims" />
+        <item itemvalue="Application.DiscTest" />
       </list>
     </recent_temporary>
   </component>
@@ -141,34 +149,66 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="395" y="91" key="#Inspections" timestamp="1620136725004">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="395" y="91" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1620136725004" />
     <state x="223" y="39" width="1089" height="785" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1616834031108">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="39" width="1089" height="785" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1616834031108" />
-    <state x="308" y="90" key="#com.intellij.ide.util.MemberChooser" timestamp="1617440232814">
+    <state x="308" y="90" key="#com.intellij.ide.util.MemberChooser" timestamp="1620115841477">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="308" y="90" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1617440232814" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1616835991197">
+    <state x="308" y="90" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1620115841477" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1620042095753">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1616835991197" />
-    <state width="1493" height="211" key="GridCell.Tab.0.bottom" timestamp="1617676101162">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1620042095753" />
+    <state width="1493" height="207" key="GridCell.Tab.0.bottom" timestamp="1620200143706">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617676101162" />
-    <state width="1493" height="211" key="GridCell.Tab.0.center" timestamp="1617676101162">
+    <state width="1493" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1620200143706" />
+    <state width="1493" height="207" key="GridCell.Tab.0.center" timestamp="1620200143705">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617676101162" />
-    <state width="1493" height="211" key="GridCell.Tab.0.left" timestamp="1617676101162">
+    <state width="1493" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1620200143705" />
+    <state width="1493" height="207" key="GridCell.Tab.0.left" timestamp="1620200143705">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617676101162" />
-    <state width="1493" height="211" key="GridCell.Tab.0.right" timestamp="1617676101162">
+    <state width="1493" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1620200143705" />
+    <state width="1493" height="207" key="GridCell.Tab.0.right" timestamp="1620200143706">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617676101162" />
+    <state width="1493" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1620200143706" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1620191521018">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1620191521018" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1620191521018">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1620191521018" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1620191521017">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1620191521017" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1620191521018">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1620191521018" />
+    <state x="505" y="68" key="SettingsEditor" timestamp="1620137760272">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="505" y="68" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1620137760272" />
+    <state x="499" y="177" key="extract.method.dialog" timestamp="1620117267935">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="177" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1620117267935" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1620137329790">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="600" height="428" key="javadoc.popup/0.0.1536.824@0.0.1536.824" timestamp="1620137329790" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AimsProject$TestPassingParameter.ic" NAME="TestPassingParameter Coverage Results" MODIFIED="1616227787264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

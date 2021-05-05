@@ -14,13 +14,17 @@ import hust.soict.globalict.aims.utils.MyDate;
 public class Order {
     public static final int MAX_NUMBERS_ORDERED = 10;
     public static final int MAX_LIMITED_ORDERS = 5;
-    private List<Media> itemsOrdered = new ArrayList<Media>();
-    public List<Media> getItemsOrdered() {
+    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    public ArrayList<Media> getItemsOrdered() {
 		return itemsOrdered;
 	}
 
 	private static int nbOrders = 0;
     private MyDate dateOrderd;
+
+    public static int getNbOrders() {
+        return nbOrders;
+    }
 
     public Order(MyDate dateOrderd) {
         if(nbOrders == MAX_LIMITED_ORDERS){
@@ -32,7 +36,9 @@ public class Order {
         }
     }
 	public Order(){
-
+		if(nbOrders < MAX_LIMITED_ORDERS){
+		    nbOrders++;
+        }
     }
     public void addMedia(Media x) {
     	itemsOrdered.add(x);

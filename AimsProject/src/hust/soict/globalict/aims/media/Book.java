@@ -83,6 +83,15 @@ public class Book extends Media{
 		getAuthor();
 		System.out.println(" : " + getCost());
 	}
+
+	public String strdisplay(){
+		String a = "Book: "+getTitle() + " - " + getCategory() + " - ";
+		for(String x : author) {
+			a += x + " / ";
+		}
+		a += " : " + getCost();
+		return a;
+	}
 	public String toString() {
 		String a = "";
 		a += getTitle() + "\n";
@@ -90,7 +99,7 @@ public class Book extends Media{
 		a +="Length of content : " + getContent().length() + "\n";
 		Set<String> set = wordFrequency.keySet();
 		for(String w : set) {
-			a += w + ": " + wordFrequency.get(w) + "\n";
+			a += "["+w + ": " + wordFrequency.get(w) + "]\n" ;
 		}
 		return a;
 	}
