@@ -6,6 +6,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import javax.naming.LimitExceededException;
+
 import hust.soict.globalict.aims.media.DigitalVideoDisc;
 import hust.soict.globalict.aims.media.Media;
 import hust.soict.globalict.aims.media.Track;
@@ -35,9 +37,11 @@ public class Order {
             nbOrders++;
         }
     }
-	public Order(){
+	public Order() throws LimitExceededException{
 		if(nbOrders < MAX_LIMITED_ORDERS){
 		    nbOrders++;
+        } else {
+        	throw new LimitExceededException("ERROR: The number of orders has reached its limit!");
         }
     }
     public void addMedia(Media x) {
@@ -71,5 +75,12 @@ public class Order {
 		   }
 
 	});
+   }
+   public Media getLuckyItem(){
+	   double randomm = Math.random();
+	   int randomint = (int) randomm;
+	   randomint = randomint % this.itemsOrdered.size();
+	   itemsOrdered.get(randomint).setCost(0);
+	   return itemsOrdered.get(randomint);
    }
 }

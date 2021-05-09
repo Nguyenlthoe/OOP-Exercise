@@ -1,19 +1,18 @@
 package hust.soict.globalict.aims;
 
-import hust.soict.globalict.aims.utils.*;
+
 import hust.soict.globalict.aims.order.*;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Iterator;
 
+import javax.naming.LimitExceededException;
 import javax.swing.*;
-import javax.swing.border.Border;
 
 import hust.soict.globalict.aims.media.*;
-import hust.soict.globalict.aims.media.DigitalVideoDisc;
 
 
 
@@ -24,7 +23,7 @@ public class Aims extends JFrame{
 
     public final void initUI() {
 	    setTitle("Menu Order");
-    	ArrayList<Order> myOrders = new ArrayList<Order>();
+    	ArrayList<Order> myOrders = new ArrayList<>();
         JPanel panel = new JPanel();
         panel.setBounds(0,0,200,900);
         panel.setBackground(Color.LIGHT_GRAY);
@@ -49,8 +48,20 @@ public class Aims extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 notification.setText("Create new Order");
-                if(myOrders.size() == 5){
+                try {
+                    myOrders.add(new Order());
                     JPanel a1 = new JPanel();
+                    JTextField text = new JTextField("A orders was created");
+                    text.setFont(new Font( "Time new roman", Font.PLAIN, 25 ));
+                    text.setBounds( 100,300,400,50 );
+                    text.setEditable( false );
+                    a1.add(text);
+                    a1.setLayout(null);
+
+                    jPanelRight.add(a1);
+                    cardLayout.next( jPanelRight );
+                } catch (LimitExceededException i) {
+                	JPanel a1 = new JPanel();
                     JTextField text1 = new JTextField("Can not create new Orders!");
                     text1.setEditable(false);
                     text1.setFont( new Font( "Time new Roman",Font.PLAIN,25 ) );
@@ -65,18 +76,6 @@ public class Aims extends JFrame{
                     a1.setVisible( true );
                     jPanelRight.add("zzzz",a1);
                     cardLayout.show( jPanelRight,"zzzz" );
-                } else {
-                    myOrders.add(new Order());
-                    JPanel a1 = new JPanel();
-                    JTextField text = new JTextField("A orders was created");
-                    text.setFont(new Font( "Time new roman", Font.PLAIN, 25 ));
-                    text.setBounds( 100,300,400,50 );
-                    text.setEditable( false );
-                    a1.add(text);
-                    a1.setLayout(null);
-
-                    jPanelRight.add(a1);
-                    cardLayout.next( jPanelRight );
                 }
             }
         });
@@ -197,12 +196,28 @@ public class Aims extends JFrame{
                                                 String title = text6.getText();
                                                 String category = text8.getText();
                                                 String director = text10.getText();
-                                                int length = Integer.parseInt(text12.getText());
-                                                float cost = Float.parseFloat(text14.getText());
-                                                DigitalVideoDisc digitala = new DigitalVideoDisc(title,category,director,length,cost);
-                                                myOrders.get(finalI).addMedia(digitala);
-                                                cardLayout.show(jPanelRight,"a2");
-                                                notification.setText("D-Disc was added in order");
+                                                int length = 0;
+                                                int check = 0;
+                                                float cost = 0;
+                                                try{
+                                                    length = Integer.parseInt(text12.getText());
+                                                    try{
+                                                        cost = Float.parseFloat(text14.getText());
+                                                    } catch (NumberFormatException i){
+                                                        JOptionPane.showMessageDialog(jPanelRight,"The cost which you enter is not valid! \n Please enter the cost.","Warning",JOptionPane.WARNING_MESSAGE);
+                                                        check = 1;
+                                                    }
+                                                } catch (NumberFormatException i){
+                                                    JOptionPane.showMessageDialog(jPanelRight,"The length which you enter is not valid \n Please enter the lenghth","Warning",JOptionPane.WARNING_MESSAGE);
+                                                    check = 1;
+                                                }
+                                                if(check != 1){
+                                                    DigitalVideoDisc digitala = new DigitalVideoDisc(title,category,director,length,cost);
+                                                    myOrders.get(finalI).addMedia(digitala);
+                                                    cardLayout.show(jPanelRight,"a2");
+                                                    notification.setText("D-Disc was added in order");
+                                                }
+
                                             }
                                         });
                                         a3.add(okla);
@@ -265,14 +280,23 @@ public class Aims extends JFrame{
                                                 notification.setText("Book was added in order");
                                                 String title = text6.getText();
                                                 String category = text8.getText();
-                                                float cost = Float.parseFloat(text14.getText());
-                                                Book newBook = new Book(title,category,cost);
-                                                String[] author = text10.getText().split("/");
-                                                for(int i = 0; i < author.length; i++){
-                                                    newBook.addAuthor(author[i]);
+                                                float cost = 0;
+                                                int check = 0;
+                                                try{
+                                                    cost = Float.parseFloat(text14.getText());
+                                                } catch (NumberFormatException i){
+                                                    check = 1;
+                                                    JOptionPane.showMessageDialog(jPanelRight,"The cost which you enter is not valid! \n Please enter the cost.","Warning",JOptionPane.WARNING_MESSAGE);
                                                 }
-                                                myOrders.get(finalI).addMedia(newBook);
-                                                cardLayout.show(jPanelRight,"a2");
+                                                if(check != 1){
+                                                    Book newBook = new Book(title,category,cost);
+                                                    String[] author = text10.getText().split("/");
+                                                    for(int i = 0; i < author.length; i++){
+                                                        newBook.addAuthor(author[i]);
+                                                    }
+                                                    myOrders.get(finalI).addMedia(newBook);
+                                                    cardLayout.show(jPanelRight,"a2");
+                                                }
                                             }
                                         });
                                         a3.add(okla);
@@ -347,71 +371,88 @@ public class Aims extends JFrame{
                                                 String category = text8.getText();
                                                 String artist = text10.getText();
                                                 String director = text12.getText();
-                                                float cost = Float.parseFloat(text14.getText());
-                                                CompactDisc cpdisc = new CompactDisc(title,category,director,cost, artist);
-                                                myOrders.get(finalI).addMedia(cpdisc);
-                                                JTextField optiontrack = new JTextField("Do you want to add more track?");
-                                                optiontrack.setEditable(false);
-                                                optiontrack.setBounds(20, 200,400,40);
-                                                optiontrack.setFont(new Font("Time new roman",Font.PLAIN,20));
-                                                a4.add(optiontrack);
+                                                float cost = 0;
+                                                int check = 0;
+                                                try{
+                                                    cost = Float.parseFloat(text14.getText());
+                                                } catch (NumberFormatException i){
+                                                    check = 1;
+                                                    JOptionPane.showMessageDialog(jPanelRight,"The cost which you enter is not valid! \n Please enter the cost.","Warning",JOptionPane.WARNING_MESSAGE);
+                                                }
+                                                if(check == 0){
+                                                    CompactDisc cpdisc = new CompactDisc(title,category,director,cost, artist);
+                                                    myOrders.get(finalI).addMedia(cpdisc);
+                                                    JTextField optiontrack = new JTextField("Do you want to add more track?");
+                                                    optiontrack.setEditable(false);
+                                                    optiontrack.setBounds(20, 200,400,40);
+                                                    optiontrack.setFont(new Font("Time new roman",Font.PLAIN,20));
+                                                    a4.add(optiontrack);
 
-                                                JButton yess = new JButton("YES");
-                                                yess.setBounds(50,250,100,30);
-                                                yess.addActionListener(new ActionListener() {
-                                                    @Override
-                                                    public void actionPerformed(ActionEvent e) {
-                                                        JPanel a5 = new JPanel();
-                                                        a5.setLayout(null);
-                                                        a5.setVisible(true);
+                                                    JButton yess = new JButton("YES");
+                                                    yess.setBounds(50,250,100,30);
+                                                    yess.addActionListener(new ActionListener() {
+                                                        @Override
+                                                        public void actionPerformed(ActionEvent e) {
+                                                            JPanel a5 = new JPanel();
+                                                            a5.setLayout(null);
+                                                            a5.setVisible(true);
 
-                                                        JTextField text15 = new JTextField("Enter the title: ");
-                                                        text15.setBounds(10,70,200,40);
-                                                        text15.setEditable(false);
-                                                        JTextField text16 = new JTextField();
-                                                        text16.setBounds(210,70, 400,40);
-                                                        a5.add(text15);
-                                                        a5.add(text16);
+                                                            JTextField text15 = new JTextField("Enter the title: ");
+                                                            text15.setBounds(10,70,200,40);
+                                                            text15.setEditable(false);
+                                                            JTextField text16 = new JTextField();
+                                                            text16.setBounds(210,70, 400,40);
+                                                            a5.add(text15);
+                                                            a5.add(text16);
 
-                                                        JTextField text17 = new JTextField("Enter the length: ");
-                                                        text17.setBounds(10,250,200,40);
-                                                        text17.setEditable(false);
-                                                        JTextField text18 = new JTextField();
-                                                        text18.setBounds(210,250, 400,40);
-                                                        a5.add(text17);
-                                                        a5.add(text18);
+                                                            JTextField text17 = new JTextField("Enter the length: ");
+                                                            text17.setBounds(10,250,200,40);
+                                                            text17.setEditable(false);
+                                                            JTextField text18 = new JTextField();
+                                                            text18.setBounds(210,250, 400,40);
+                                                            a5.add(text17);
+                                                            a5.add(text18);
 
-                                                        JButton newbutton2 = new JButton("Oke");
-                                                        newbutton2.setBounds(210,600,100,30);
-                                                        newbutton2.addActionListener(new ActionListener() {
-                                                            @Override
-                                                            public void actionPerformed(ActionEvent e) {
-                                                                String titletrack = text16.getText();
-                                                                int lengthtrack = Integer.parseInt(text18.getText());
-                                                                cpdisc.addTrack(new Track(titletrack,lengthtrack));
-                                                                cardLayout.show(jPanelRight,"track");
-                                                            }
-                                                        });
-                                                        a5.add(newbutton2);
-                                                        jPanelRight.add("entertrack",a5);
-                                                        cardLayout.show(jPanelRight,"entertrack");
-                                                    }
-                                                });
-                                                a4.add(yess);
+                                                            JButton newbutton2 = new JButton("Oke");
+                                                            newbutton2.setBounds(210,600,100,30);
+                                                            newbutton2.addActionListener(new ActionListener() {
+                                                                @Override
+                                                                public void actionPerformed(ActionEvent e) {
+                                                                    String titletrack = text16.getText();
+                                                                    int lengthtrack = 0,check = 0;
+                                                                    try{
+                                                                        lengthtrack = Integer.parseInt(text18.getText());
+                                                                    } catch (NumberFormatException i){
+                                                                        JOptionPane.showMessageDialog(jPanelRight,"The length which you enter is not valid \n Please enter the lenghth","Warning",JOptionPane.WARNING_MESSAGE);
+                                                                        check = 1;
+                                                                    }
+                                                                    if(check == 0){
+                                                                        cpdisc.addTrack(new Track(titletrack,lengthtrack));
+                                                                        cardLayout.show(jPanelRight,"track");
+                                                                    }
+                                                                }
+                                                            });
+                                                            a5.add(newbutton2);
+                                                            jPanelRight.add("entertrack",a5);
+                                                            cardLayout.show(jPanelRight,"entertrack");
+                                                        }
+                                                    });
+                                                    a4.add(yess);
 
-                                                JButton no = new JButton("NO");
-                                                no.addActionListener(new ActionListener() {
-                                                    @Override
-                                                    public void actionPerformed(ActionEvent e) {
-                                                        cardLayout.show(jPanelRight,"a2");
-                                                    }
-                                                });
-                                                no.setBounds(200,250,100,30);
-                                                a4.add(no);
+                                                    JButton no = new JButton("NO");
+                                                    no.addActionListener(new ActionListener() {
+                                                        @Override
+                                                        public void actionPerformed(ActionEvent e) {
+                                                            cardLayout.show(jPanelRight,"a2");
+                                                        }
+                                                    });
+                                                    no.setBounds(200,250,100,30);
+                                                    a4.add(no);
 
-                                                jPanelRight.add("track",a4);
-                                                cardLayout.show(jPanelRight,"track");
-                                                notification.setText("Compact was added in order");
+                                                    jPanelRight.add("track",a4);
+                                                    cardLayout.show(jPanelRight,"track");
+                                                    notification.setText("Compact was added in order");
+                                                }
                                             }
                                         });
                                         a3.add(okla);
@@ -565,11 +606,58 @@ public class Aims extends JFrame{
 
                                 ArrayList<Media> media3 = myOrders.get(finalI).getItemsOrdered();
                                 for(int i = 0; i < media3.size(); i++){
+                                	int ono = i;
                                     JTextField textt = new JTextField(media3.get(i).strdisplay());
                                     textt.setEditable(false);
                                     textt.setFont(new Font("Time new roman",Font.PLAIN, 18));
-                                    textt.setBounds(10, 70 + i * 70, 700,40);
+                                    textt.setBounds(10, 70 + i * 70, 680,40);
                                     newpanel1.add(textt);
+                                    if(media3.get(i) instanceof CompactDisc) {
+                                    	JButton playButton = new JButton("Play");
+                                    	playButton.setBounds(690, 70 + i*70, 100,40);
+                                    	playButton.addActionListener(new ActionListener() {
+											
+											@Override
+											public void actionPerformed(ActionEvent e) {
+												try {
+													
+													CompactDisc cDisc = (CompactDisc) media3.get(ono);
+													ArrayList<Track> arraytrack = (ArrayList<Track>) cDisc.getTracks();
+													Track nextTrack;
+													Iterator<Track> iter = arraytrack.iterator();
+													while(iter.hasNext()) {
+														nextTrack = (Track) iter.next();
+														try {
+															nextTrack.play();
+															JOptionPane.showMessageDialog(jPanelRight, "Playing Track: " +nextTrack.getTitle() + "\nTrack length: " + nextTrack.getLength(), "Playing CD", JOptionPane.OK_OPTION);
+														}catch(PlayerException exx) {
+																throw exx;
+														}
+													}
+												} catch(PlayerException excep) {
+													JOptionPane.showMessageDialog(jPanelRight, "ERROR: track length can't be non-positive","Warning",JOptionPane.WARNING_MESSAGE);
+												}
+											}
+										});
+                                    	newpanel1.add(playButton);
+                                    } else if(media3.get(ono) instanceof DigitalVideoDisc) {
+                                    	JButton playButton = new JButton("Play");
+                                    	playButton.setBounds(690, 70 + i*70, 100,40);
+                                    	playButton.addActionListener(new ActionListener() {
+											
+											@Override
+											public void actionPerformed(ActionEvent e) {
+												try {
+													DigitalVideoDisc alain= ((DigitalVideoDisc) media3.get(ono));
+													alain.play();
+													JOptionPane.showMessageDialog(jPanelRight, "Playing DVD: " + alain.getTitle() + "\nDVD length: " + alain.getLength(),"Playing DVD", JOptionPane.OK_OPTION);
+												} catch(PlayerException excep) {
+													JOptionPane.showMessageDialog(jPanelRight, "ERROR: track length can't be non-positive","Warning",JOptionPane.WARNING_MESSAGE);
+												}
+											}
+										});
+                                    	newpanel1.add(playButton);
+                                    }
                                 }
 
                                 JButton exittt = new JButton("Exit");
@@ -743,22 +831,79 @@ public class Aims extends JFrame{
                                 newpanel1.add(exittt);
                                 newpanel1.setLayout(null);
                                 newpanel1.setSize(780,700);
-                                jPanelRight.add("sort",newpanel1);
-                                cardLayout.show(jPanelRight, "sort");
+                                jPanelRight.add("deletee",newpanel1);
+                                cardLayout.show(jPanelRight, "deletee");
                             }
                         });
                         a1.add(newButton1);
                     }
-                    jPanelRight.add("Sort",a1);
-                    cardLayout.show(jPanelRight, "Sort");
+                    jPanelRight.add("Deletee",a1);
+                    cardLayout.show(jPanelRight, "Deletee");
 
                 }
             }
         });
         panel.add(deleteButton);
 
+        JButton getluckyButton = new JButton("Get a lucky item");
+        getluckyButton.setBounds(10,450,150,25);
+        getluckyButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                notification.setText("Get a lucky item");
+                if(myOrders.size() == 0){
+                    JPanel a1 =new JPanel();
+                    a1.setLayout(null);
+                    a1.setVisible(true);
+                    JTextField newtext = new JTextField("No Order was created");
+                    newtext.setBounds(20,100,400,45);
+                    newtext.setFont(new Font("Time new Roman", Font.PLAIN , 25));
+                    newtext.setEditable(false);
+                    JTextField advice = new JTextField("Please create a Order");
+                    advice.setBounds(20,300,400,45);
+                    advice.setFont(new Font("Time new Roman", Font.PLAIN, 25));
+                    advice.setEditable(false);
+                    a1.add(newtext);
+                    a1.add(advice);
+                    jPanelRight.add("abc5",a1);
+                    cardLayout.show(jPanelRight, "abc5");
+                } else {
+                    JPanel a1 = new JPanel();
+                    a1.setLayout(null);
+                    a1.setVisible(true);
+                    JTextField text1 = new JTextField("Choose a Order: ");
+                    text1.setFont(new Font("Time new roman", Font.PLAIN, 20));
+                    text1.setEditable(false);
+                    text1.setBounds(10, 10, 200,45);
+                    a1.add(text1);
+                    for(int i = 0; i < myOrders.size(); i++){
+                        JButton newButton1 = new JButton("Order[" + (i+1) + "]");
+                        newButton1.setBounds(10,10 + 70*(i+1), 200,45);
+                        int finalI = i;
+                        newButton1.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                if(myOrders.get(finalI).getItemsOrdered().size() > 0) {
+                                	Media luckyMedia = myOrders.get(finalI).getLuckyItem();
+                                    JOptionPane.showMessageDialog(jPanelRight, "Lucky items is: " + luckyMedia.getTitle());
+                                } else {
+                                	JOptionPane.showMessageDialog(jPanelRight, "No items is in this order!", "Warning", JOptionPane.WARNING_MESSAGE);
+                                }
+                          
+                            }
+                        });
+                        a1.add(newButton1);
+                    }
+                    jPanelRight.add("Deletee",a1);
+                    cardLayout.show(jPanelRight, "Deletee");
+
+                }
+            }
+        });
+        panel.add(getluckyButton);
+        
         JButton ExitButton = new JButton("Exit now");
-        ExitButton.setBounds(10,450,150,25);
+        ExitButton.setBounds(10,520,150,25);
         ExitButton.addActionListener(new ActionListener() {
 			
 			@Override

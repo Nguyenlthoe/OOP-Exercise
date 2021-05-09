@@ -19,7 +19,7 @@ public class DiscTest {
 //        dvd9.setCost(24.3f);
 //        DigitalVideoDisc dvd10 = new DigitalVideoDisc("Doraemon and Nobita");
 //        dvd10.setCost(24.3f);
-        Order anOrder = new Order();
+       // Order anOrder = new Order();
 //        anOrder.addDigitalVideoDisc(dvd4);
 //        anOrder.addDigitalVideoDisc(dvd5);
 //        anOrder.addDigitalVideoDisc(dvd6);

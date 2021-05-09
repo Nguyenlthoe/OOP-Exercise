@@ -6,6 +6,9 @@ public abstract class  Media implements Comparable<Media>{
 	private String title;
 	private String category;
 	private float cost;
+	public void setCost(float cost) {
+		this.cost = cost;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -19,7 +22,7 @@ public abstract class  Media implements Comparable<Media>{
 		return cost;
 	}
 	public boolean equals(Media a) {
-		if(a.getId() == this.id) {
+		if(a.getTitle().equals(this.getTitle()) && a.getCost() == this.getCost()) {
 			return true;
 		} else return false;
 	}
